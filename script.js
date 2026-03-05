@@ -91,18 +91,6 @@ form.addEventListener('submit', (e) => {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
 
-    // Build WhatsApp message
-    let message = `Hola, me interesa el revestimiento de fibra de vidrio para mi piscina.\n\n`;
-    message += `*Nombre:* ${data.nombre}\n`;
-    message += `*Teléfono:* ${data.telefono}\n`;
-    if (data.email) message += `*Correo:* ${data.email}\n`;
-    if (data.comuna) message += `*Comuna:* ${data.comuna}\n`;
-    if (data.medidas) message += `*Medidas (Largo x Ancho):* ${data.medidas}\n`;
-    if (data.profundidad_min) message += `*Profundidad Mínima:* ${data.profundidad_min}\n`;
-    if (data.profundidad_max) message += `*Profundidad Máxima:* ${data.profundidad_max}\n`;
-
-    const whatsappUrl = `https://wa.me/56982256792?text=${encodeURIComponent(message)}`;
-
     // Send data to n8n webhook
     fetch('https://primary-production-1482.up.railway.app/webhook/formulario-web-revestimiento-landing', {
         method: 'POST',
@@ -120,32 +108,15 @@ form.addEventListener('submit', (e) => {
         })
     }).catch(err => console.error('Error enviando a n8n:', err));
 
-    // Show success state
-    const wrapper = document.querySelector('.contact-form-wrapper');
-    form.style.display = 'none';
-
-    const success = document.createElement('div');
-    success.className = 'form-success active';
-    success.innerHTML = `
-        <div class="form-success-icon">✓</div>
-        <h3>¡Datos enviados!</h3>
-        <p>Serás redirigido a WhatsApp para confirmar tu solicitud. Si no se abre automáticamente, haz clic en el botón.</p>
-        <br>
-        <a href="${whatsappUrl}" target="_blank" rel="noopener" class="btn btn-lg" style="background:#25D366">Abrir WhatsApp</a>
-    `;
-    wrapper.appendChild(success);
-
     // Track form conversion
     trackEvent('generate_lead', {
         event_category: 'form',
-        event_label: 'cotizacion_whatsapp',
+        event_label: 'cotizacion_landing',
         comuna: data.comuna || 'no especificada'
     });
 
-    // Open WhatsApp
-    setTimeout(() => {
-        window.open(whatsappUrl, '_blank');
-    }, 1000);
+    // Redirect to thank you page
+    window.location.href = '/thank-you';
 });
 
 // ===== Gallery Lightbox =====

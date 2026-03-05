@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracias por tu cotización | Fibrolab Chile</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .thank-you-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .thank-you-hero {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 24px 80px;
+            background: linear-gradient(135deg, var(--primary-50) 0%, var(--white) 50%, var(--primary-100) 100%);
+            text-align: center;
+        }
+
+        .thank-you-content {
+            max-width: 600px;
+        }
+
+        .thank-you-icon {
+            width: 96px;
+            height: 96px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 32px;
+            animation: scaleIn 0.5s ease-out;
+        }
+
+        .thank-you-icon svg {
+            width: 48px;
+            height: 48px;
+            color: var(--white);
+        }
+
+        .thank-you-content h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .thank-you-content .subtitle {
+            font-size: 1.15rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .thank-you-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: left;
+            margin-bottom: 48px;
+        }
+
+        .thank-you-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            background: var(--white);
+            padding: 20px 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-200);
+        }
+
+        .step-number {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            background: var(--primary-100);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .step-text h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .step-text p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            line-height: 1.5;
+        }
+
+        .thank-you-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 2px solid var(--gray-200);
+            color: var(--dark);
+            background: var(--white);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            background: #25D366;
+            color: var(--white);
+            border: 2px solid #25D366;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1fb855;
+            border-color: #1fb855;
+            box-shadow: var(--shadow);
+        }
+
+        @keyframes scaleIn {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .thank-you-hero { padding: 100px 20px 60px; }
+            .thank-you-content h1 { font-size: 1.8rem; }
+            .thank-you-content .subtitle { font-size: 1rem; }
+            .thank-you-actions { flex-direction: column; }
+            .thank-you-actions a { text-align: center; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-page">
+        <!-- Header -->
+        <header class="header">
+            <div class="container header-inner">
+                <a href="/" class="logo">
+                    <img src="logo.svg" alt="Fibrolab" class="logo-img">
+                </a>
+            </div>
+        </header>
+
+        <!-- Thank You Content -->
+        <section class="thank-you-hero">
+            <div class="thank-you-content">
+                <div class="thank-you-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                </div>
+
+                <h1>¡Gracias por cotizar con nosotros!</h1>
+                <p class="subtitle">Recibimos tu solicitud correctamente. Un especialista revisará los datos de tu piscina y te enviará una cotización personalizada en los próximos minutos.</p>
+
+                <div class="thank-you-steps">
+                    <div class="thank-you-step">
+                        <div class="step-number">1</div>
+                        <div class="step-text">
+                            <h3>Revisamos tu solicitud</h3>
+                            <p>Nuestro equipo analiza las medidas y condiciones de tu piscina.</p>
+                        </div>
+                    </div>
+                    <div class="thank-you-step">
+                        <div class="step-number">2</div>
+                        <div class="step-text">
+                            <h3>Te contactamos</h3>
+                            <p>Recibirás tu cotización detallada por WhatsApp en los próximos minutos.</p>
+                        </div>
+                    </div>
+                    <div class="thank-you-step">
+                        <div class="step-number">3</div>
+                        <div class="step-text">
+                            <h3>Visita técnica sin costo</h3>
+                            <p>Coordinamos una visita para evaluar tu piscina, sin compromiso.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="thank-you-actions">
+                    <a href="https://wa.me/56982256792" target="_blank" rel="noopener" class="btn-whatsapp">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.379 0-4.575-.83-6.3-2.213l-.44-.352-3.262 1.094 1.094-3.262-.352-.44A9.95 9.95 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+                        Escríbenos por WhatsApp
+                    </a>
+                    <a href="/" class="btn-outline">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-bottom" style="border: none;">
+                    <p>&copy; 2026 Fibrolab. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
