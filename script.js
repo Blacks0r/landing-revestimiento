@@ -103,6 +103,23 @@ form.addEventListener('submit', (e) => {
 
     const whatsappUrl = `https://wa.me/56982256792?text=${encodeURIComponent(message)}`;
 
+    // Send data to n8n webhook
+    fetch('https://primary-production-1482.up.railway.app/webhook/formulario-web-revestimiento-landing', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            nombre: data.nombre,
+            telefono: data.telefono,
+            email: data.email || '',
+            comuna: data.comuna || '',
+            medidas: data.medidas || '',
+            profundidad_min: data.profundidad_min || '',
+            profundidad_max: data.profundidad_max || '',
+            origen: 'landing-revestimiento',
+            fecha: new Date().toISOString()
+        })
+    }).catch(err => console.error('Error enviando a n8n:', err));
+
     // Show success state
     const wrapper = document.querySelector('.contact-form-wrapper');
     form.style.display = 'none';
