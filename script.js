@@ -115,6 +115,14 @@ form.addEventListener('submit', (e) => {
         comuna: data.comuna || 'no especificada'
     });
 
+    // Meta Pixel Lead event
+    if (typeof fbq === 'function') {
+        fbq('track', 'Lead', {
+            content_name: 'cotizacion_revestimiento',
+            comuna: data.comuna || ''
+        });
+    }
+
     // Redirect to thank you page
     window.location.href = '/thank-you';
 });
